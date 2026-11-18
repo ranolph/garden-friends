@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "artwork_images": 1177,
+  "artwork_files": 1178,
+  "artwork_bytes": 768167340,
+  "excluded_input_counts": {
+    "non_artwork_files": 1,
+    "private_or_runtime_files": 2
+  },
+  "git_lfs_required": false,
+  "git_lfs_paths": [],
+  "files_over_browser_upload_limit": 0,
+  "publication": "Review NOTICE.md before publishing; credentials and runtime data are not included."
+}

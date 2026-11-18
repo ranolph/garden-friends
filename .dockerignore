@@ -1,0 +1,13 @@
+**
+!requirements.txt
+!main.py
+!garden_friends_settings.py
+!server.py
+!ARTWORK_MANIFEST.json
+!static/
+!static/**
+!species_art/
+!species_art/**
+species_art/**/latest_visual.*
+species_art/**/snapshots/**
+species_art/**/.env*

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4eedb">
+  <meta name="color-scheme" content="light">
+  <title>Settings · Garden Friends</title>
+  <link rel="icon" type="image/png" href="/art/favicon.png">
+  <link rel="stylesheet" href="/static/garden-settings.css">
+  <script src="/static/garden-settings.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#settings-main">Skip to settings</a>
+  <header class="page-header">
+    <a class="back-link" href="/?view=statistics">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m11.5 4-6 6 6 6M6 10h11"/></svg>
+      <span>Statistics</span>
+    </a>
+    <a class="wordmark" href="/">Garden Friends</a>
+    <span class="header-label">Settings</span>
+  </header>
+
+  <main id="settings-main" tabindex="-1">
+    <div id="loading-state" class="loading-state" role="status">Opening settings…</div>
+
+    <section id="auth-panel" class="auth-panel" aria-labelledby="auth-title" hidden>
+      <div class="auth-emblem" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M36 9c-15 0-24 5-24 15a12 12 0 0 0 12 12c10 0 15-9 15-24V9h-3Z"/><path d="M11 38 30 19M20 29v-9m0 9h9"/></svg>
+      </div>
+      <p class="eyebrow">Garden Friends</p>
+      <h1 id="auth-title">Connection settings</h1>
+      <p id="auth-description" class="auth-description">Sign in to manage your connections.</p>
+      <div id="auth-message" class="notice" role="status" aria-live="polite" hidden></div>
+
+      <form id="setup-form" class="auth-form" hidden>
+        <div class="field">
+          <label for="setup-code">Setup code</label>
+          <input id="setup-code" name="setup_code" autocomplete="off" autocapitalize="none" spellcheck="false" required aria-describedby="setup-code-help">
+          <p id="setup-code-help" class="field-help">Find this code in the Garden Friends startup logs or <code>data/setup-code.txt</code>.</p>
+        </div>
+        <div class="field">
+          <label for="setup-password">Choose an administrator password</label>
+          <input id="setup-password" type="password" name="password" autocomplete="new-password" minlength="12" required aria-describedby="setup-password-help">
+          <p id="setup-password-help" class="field-help">Use at least 12 characters. This protects connection settings; visitors can still view the garden.</p>
+        </div>
+        <div class="field">
+          <label for="setup-confirm">Confirm password</label>
+          <input id="setup-confirm" type="password" autocomplete="new-password" minlength="12" required>
+        </div>
+        <button class="button button-primary auth-submit" type="submit">Set up Garden Friends</button>
+      </form>
+
+      <form id="login-form" class="auth-form" hidden>
+        <div class="field">
+          <label for="login-password">Administrator password</label>
+          <input id="login-password" type="password" name="password" autocomplete="current-password" required>
+        </div>
+        <button class="button button-primary auth-submit" type="submit">Sign in</button>
+      </form>
+    </section>
+
+    <div id="settings-app" class="settings-layout" hidden>
+      <aside class="section-index" aria-label="Settings sections">
+        <div class="index-heading">
+          <span class="eyebrow">Your garden</span>
+          <h1>Settings</h1>
+        </div>
+        <nav id="section-navigation" aria-label="Jump to settings section"></nav>
+        <div id="mode-summary" class="mode-summary"></div>
+      </aside>
+
+      <div class="settings-content">
+        <div class="content-heading">
+          <div>
+            <p class="eyebrow">Garden Friends</p>
+            <h2>Connection settings</h2>
+          </div>
+          <button id="reload-settings" class="button button-quiet" type="button" title="Reload saved settings">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 7a6.5 6.5 0 1 0 .5 5M16 3v4h-4"/></svg>
+            <span>Reload</span>
+          </button>
+        </div>
+        <div id="page-message" class="notice" role="status" aria-live="polite" hidden></div>
+
+        <form id="connection-form">
+          <fieldset id="connection-fields" class="form-fields">
+            <legend class="visually-hidden">Garden Friends connection settings</legend>
+            <div id="settings-sections"></div>
+          </fieldset>
+        </form>
+
+        <section class="security-section" aria-labelledby="security-title">
+          <div class="security-heading">
+            <div>
+              <h2 id="security-title">Administrator access</h2>
+              <p>Only signed-in administrators can change these settings.</p>
+            </div>
+            <button id="logout-button" class="button button-quiet" type="button">Sign out</button>
+          </div>
+          <details id="password-details">
+            <summary>Change password</summary>
+            <form id="password-form">
+              <div class="field-grid">
+                <div class="field field-wide">
+                  <label for="current-password">Current password</label>
+                  <input id="current-password" type="password" autocomplete="current-password" required>
+                </div>
+                <div class="field">
+                  <label for="new-password">New password</label>
+                  <input id="new-password" type="password" autocomplete="new-password" minlength="12" required aria-describedby="new-password-help">
+                  <p id="new-password-help" class="field-help">At least 12 characters.</p>
+                </div>
+                <div class="field">
+                  <label for="confirm-password">Confirm new password</label>
+                  <input id="confirm-password" type="password" autocomplete="new-password" minlength="12" required>
+                </div>
+              </div>
+              <div class="password-actions">
+                <button class="button button-secondary" type="submit">Update password</button>
+                <p id="password-message" class="inline-message" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+          </details>
+        </section>
+      </div>
+
+      <div class="save-bar">
+        <p id="save-state" role="status" aria-live="polite">No unsaved changes</p>
+        <button id="save-button" class="button button-primary" type="submit" form="connection-form">Save &amp; apply</button>
+      </div>
+    </div>
+
+    <section id="unavailable-panel" class="auth-panel unavailable-panel" hidden>
+      <p class="eyebrow">Garden Friends</p>
+      <h1>Settings could not be opened</h1>
+      <p id="unavailable-message" class="auth-description">Check that Garden Friends is running, then try again.</p>
+      <button id="retry-button" class="button button-primary" type="button">Try again</button>
+    </section>
+    <noscript><p class="no-script">Enable JavaScript to manage Garden Friends settings. <a href="/?view=statistics">Return to Statistics</a>.</p></noscript>
+  </main>
+</body>
+</html>

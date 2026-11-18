@@ -1,0 +1,28 @@
+# Credentials, administration state and live camera images stay on the host.
+.env
+.env.*
+!.env.example
+data/
+snapshots/
+**/latest_visual.*
+**/setup-code.txt
+**/admin.json
+**/settings.json
+**/restart.request
+*.log
+*.db
+*.sqlite
+*.sqlite3
+
+# Local tools and generated archives.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+garden-friends*.zip
+garden-friends*.zip.sha256
+_github_link_backups/
+_avian_fastload_backups/

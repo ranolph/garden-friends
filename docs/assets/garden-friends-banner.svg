@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
+  <title id="title">Garden Friends</title>
+  <desc id="desc">An illustrated, self-hosted record of birds, bats and other garden wildlife.</desc>
+  <rect width="1200" height="340" rx="24" fill="#f5f0e2"/>
+  <rect x="18" y="18" width="1164" height="304" rx="15" fill="none" stroke="#d9ceb3"/>
+  <path d="M710 44v252" stroke="#ded4bd"/>
+  <text x="64" y="91" fill="#917d60" font-family="Arial,sans-serif" font-size="12" letter-spacing="4">A GARDEN, OBSERVED</text>
+  <text x="60" y="167" fill="#2c3028" font-family="Georgia,serif" font-size="70" letter-spacing="-2">Garden Friends</text>
+  <text x="64" y="213" fill="#665f52" font-family="Arial,sans-serif" font-size="19">Birds, bats and the visitors in between.</text>
+  <path d="M64 250h38" stroke="#b75a42" stroke-width="3" stroke-linecap="round"/>
+  <text x="116" y="256" fill="#665f52" font-family="Arial,sans-serif" font-size="12" letter-spacing="1">SELF-HOSTED · ILLUSTRATED · CONNECTED</text>
+  <circle cx="953" cy="161" r="101" fill="#e9e3ce"/>
+  <path d="M768 262c100-8 208-29 326-82" fill="none" stroke="#647256" stroke-width="4" stroke-linecap="round"/>
+  <path d="M814 254c-38-13-47-31-44-52 25 5 43 21 44 52Zm58-13c-12-36-6-59 13-72 10 23 8 47-13 72Zm146-42c-1-37 14-59 40-64 1 25-10 47-40 64Zm-66 23c28 10 51 6 66-13-21-12-44-10-66 13Z" fill="#87926f"/>
+  <path d="M886 216c-22-23-27-54-14-78 12-22 35-31 57-24 3-26 19-43 43-45 25-2 45 16 46 41l30 11-29 14c-6 25-20 44-43 56-23 13-56 17-90 25Z" fill="#434d38"/>
+  <path d="M916 158c-8 13-10 32-1 46 26-2 47-8 63-21-20-4-39-12-62-25Z" fill="#b9b58c"/>
+  <path d="M928 108c7-18 18-28 35-30 16-2 30 5 38 17-16-2-27 3-37 13-11 9-24 10-36 0Z" fill="#c96a4a"/>
+  <circle cx="988" cy="107" r="4" fill="#f9f4e8"/>
+  <circle cx="989" cy="107" r="1.8" fill="#2c3028"/>
+  <path d="M899 217l-2 20m33-27 3 21" stroke="#434d38" stroke-width="3" stroke-linecap="round"/>
+  <path d="m827 113 17-10 18 10-7-18 7-11-18 4-18-4 8 11Z" fill="#a89878"/>
+  <path d="m1072 79 9 10 13-2-7 10 5 12-12-4-10 8 1-13-10-7 12-2Z" fill="#b75a42" opacity=".8"/>
+  <text x="942" y="293" text-anchor="middle" fill="#7c7866" font-family="Arial,sans-serif" font-size="11" letter-spacing="3">FROM A SOUND TO A SIGHTING</text>
+</svg>
