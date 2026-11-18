@@ -1,8 +1,4 @@
 <p align="center">
-  <img src="docs/assets/garden-friends-banner.svg" alt="Garden Friends — an illustrated, self-hosted wildlife dashboard" width="100%">
-</p>
-
-<p align="center">
   <strong>BirdNET &amp; Frigate</strong> &nbsp; · &nbsp; <strong>InfluxDB</strong> &nbsp; · &nbsp; <strong>MQTT</strong> &nbsp; · &nbsp; <strong>Home Assistant</strong>
 </p>
 
@@ -100,14 +96,6 @@ flowchart LR
 
 InfluxDB, the MQTT broker and your detectors run separately. Garden Friends does not create a new database or alter your existing detector configuration. See [Deployment](docs/DEPLOYMENT.md) for network, persistence and upgrade details.
 
-## Midnight means midnight
-
-The daily display follows the selected timezone rather than a fixed UTC offset. In `Europe/London`, a detection at **23:59** belongs to the current day; a detection at **00:00** starts the next one.
-
-Daylight-saving changes are handled as local calendar days, so a day can span 23 or 25 elapsed hours. The setting changes the window used to display detections; it does not rewrite stored detection timestamps.
-
-The **Today** statistics and Home Assistant daily summary use the same midnight boundary. The historical `wildlife/summary_24h` compatibility topic follows that daily window too; it is not a separate rolling 24-hour total.
-
 ## The artwork
 
 The release contains the complete static artwork collection exported from the selected artwork folder: source PNGs, WebP versions, flight poses, aliases, favicon images and the masks or ratio metadata needed by the collage. Files retain their original names and bytes.
@@ -126,41 +114,6 @@ python tools/verify_release.py
 ```
 
 The visual collage uses available silhouettes and alias mappings. Dwell and co-occurrence values are estimates from detection timing, rather than direct measurements of an animal's residence or social behaviour.
-
-## Publishing your distribution
-
-The export creates a **`garden-friends/` repository folder**, a **`garden-friends.zip`** release archive and a checksum file. Upload the contents of the repository folder to GitHub; the ZIP can also be attached to a release.
-
-Use [the publishing guide](docs/PUBLISHING.md) for GitHub Desktop, Git commands and large artwork files. The builder adds Git LFS rules when any individual file exceeds GitHub's regular-Git file limit. Keep the generated `.gitattributes` file if those rules are present.
-
-The project name is **Garden Friends**. The author profile link in the public display points to [ranolph](https://github.com/ranolph).
-
-## Project layout
-
-```text
-main.py                       Wildlife catalogue, collage and statistics
-garden_friends_settings.py    Administration and persisted connection settings
-server.py                     Application runner and managed restarts
-static/                       Settings page assets
-species_art/                  Complete static illustration collection
-docs/                         Deployment and publishing guides
-tools/                        Release export and checksum verification
-tests/                        Application, settings and packaging checks
-compose.yaml                  Container deployment
-```
-
-## Development
-
-For a local Python environment:
-
-```bash
-python -m venv .venv
-# Activate your virtual environment, then:
-python -m pip install -r requirements-dev.txt
-python server.py
-```
-
-Run the checks with `python -m pytest -q tests`. See [CONTRIBUTING.md](CONTRIBUTING.md) for the change and review expectations, and [SECURITY.md](SECURITY.md) for administration and reporting guidance.
 
 ## Credits and rights
 
