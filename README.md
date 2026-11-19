@@ -98,7 +98,7 @@ InfluxDB, the MQTT broker and your detectors run separately. Garden Friends does
 
 ## The artwork
 
-The release contains the complete static artwork collection exported from the selected artwork folder: source PNGs, WebP versions, flight poses, aliases, favicon images and the masks or ratio metadata needed by the collage. Files retain their original names and bytes.
+The release contains the complete static artwork collection exported from the selected artwork folder: source PNGs, WebP versions, flight poses, aliases, favicon images and the masks or ratio metadata needed by the collage. Files retain their original names and bytes. This currently contains common birds, bats and mammals found in the South-West of England. 
 
 - **`species_art/`** contains the images and static artwork metadata.
 - **`ARTWORK_MANIFEST.json`** records every included artwork file, byte size and SHA-256 checksum.
